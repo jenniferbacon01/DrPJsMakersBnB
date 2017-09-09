@@ -1,6 +1,6 @@
 # DrPJsMakersBnB
 This web application allows users to list rooms they have available, and to book rooms. This was a one week group project by
-[**d**avid-div](https://github.com/david-div), [**r**olandosorbelli](https://github.com/rolandosorbelli), [**p**yan83](https://www.github.com/pyan83)
+[**d**avid-div](https://github.com/david-div), [**r**olandosorbelli](https://github.com/rolandosorbelli), [**p**yan83](https://www.github.com/pyan83), 
 [**j**enniferbacon01](https://github.com/jenniferbacon01), and
 [**s**tephengeller](https://github.com/stephengeller).
 ### Features
