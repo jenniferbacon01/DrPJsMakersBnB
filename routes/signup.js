@@ -47,7 +47,7 @@ router.post('/', function(req, res) {
                 errors.push(signUpError);
             }
         });
-        if (errors !== undefined) {
+        if (errors.length !== 0) {
             console.log('errors');
             console.log(errors);
             res.render('signup', {
