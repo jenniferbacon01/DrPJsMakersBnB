@@ -26,7 +26,6 @@ router.get('/', function(req, res){
 
 router.post('/', function(req, res) {
     sess = req.session;
-    signUpError = undefined;
 
 
     req.checkBody('name'     , 'Name is required').notEmpty();
@@ -36,22 +35,39 @@ router.post('/', function(req, res) {
 
     var errors = req.validationErrors();
 
-    if (errors) {
-        res.render('signup', {
-            errors: errors,
-            currentUser: sess.currentUser,
-            signUpError: signUpError
-        });
-    } else {
-        var newUser = new User(
-            req.body.name,
-            req.body.username,
-            req.body.password,
-            req.body.email);
-        db.users.insert(newUser);
-        sess.currentUser = newUser;
-        res.redirect('/rooms');
+    if (errors === false) {
+        errors = []
     }
+
+    db.users.find(function (err, docs) {
+        docs.forEach(function (user) {
+            if ((user.username === req.body.username)) {
+                var signUpError = {msg : 'A user already exists with that username'};
+                console.log(signUpError);
+                errors.push(signUpError);
+            }
+        });
+        if (errors !== undefined) {
+            console.log('errors');
+            console.log(errors);
+            res.render('signup', {
+                errors: errors,
+                currentUser: sess.currentUser
+            });
+        } else {
+            var newUser = new User(
+                req.body.name,
+                req.body.username,
+                req.body.password,
+                req.body.email);
+            db.users.insert(newUser);
+            sess.currentUser = newUser;
+            res.redirect('/rooms');
+        }
+    });
+
+
+
 
 });
 

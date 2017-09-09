@@ -94,6 +94,19 @@ section {
     text-align: center;
 }
 
+.bookRoom {
+    border: 1px solid black;
+    margin: auto;
+    padding-top: 30px;
+    width: 20%;
+    box-shadow: 10px 10px grey;
+    font-size: inherit;
+    border-radius: 10px;
+    background-color: white;
+    background: rgba(100%,100%,100%,.7);
+    text-align: center;
+}
+
 .loggedInAs {
     margin: auto;
     padding-left: 10px;
@@ -159,6 +172,7 @@ section {
 
 .inputPrompt {
     color: white;
+    padding-top: 10;
     text-shadow: 1px 1px black;
     font-size: larger
 }
