@@ -1,3 +1,4 @@
+
 {
   "name": "drpjsmakersbnb",
   "version": "1.0.0",
@@ -23,5 +24,8 @@
     "nodemon": "^1.12.0",
     "package.json": "^2.0.1",
     "zombie": "^5.0.7"
+  },
+  "engines": {
+      "node": "6.11.2"
   }
 }
